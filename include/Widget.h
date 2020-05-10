@@ -1,8 +1,8 @@
 #ifndef WIDGET_H
 #define WIDGET_H
 
-#define XX 400
-#define YY 400
+#define XX 600
+#define YY 600
 
 #include "graphics.hpp"
 

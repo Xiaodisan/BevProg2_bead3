@@ -4,7 +4,7 @@
 using namespace genv;
 
 int game_loop(event ev) {
-    Amoeba_field jatek(10,10,XX-20,YY-20,5);
+    Amoeba_field jatek(10,10,XX-20,YY-20,11);
     while(gin >> ev && ev.keycode != key_escape) {
         if(ev.type == ev_timer) {
             jatek.update();

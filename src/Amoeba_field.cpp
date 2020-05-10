@@ -6,17 +6,16 @@ using namespace genv;
 
 Amoeba_field::Amoeba_field(int nx, int ny, int sx, int sy, int ax, int ay, int d) :
     Widget(nx,ny,sx,sy) {
-    int dx = sx / ((10+d)*ax);
-    int dy = ay <= 0 ? sy / ((10+d)*ax) : sy / ((10+d)*ay);
+    float dx = sx * 1.0 / (10*ax + d*ax + d); std::cout << sx << " " << ax << " " << dx;
+    float dy = ay <= 0 ? sy * 1.0 / (10*ax + d*ax + d) : sy * 1.0 / (10*ay + d*ay + d);
     for(int i = 0; ay <= 0 ? i < ax : i < ay; i++) {
         std::vector<Square*> temp;
         for(int j = 0; j < ax; j++) {
-            temp.push_back(new Square(nx + (j+1)*d*dx + j*10*dx, ny + (i+1)*d*dy + i*10*dy, 10*dx, 10*dy, &next_player));
+            temp.push_back(new Square(nx + d*dx + j*(10+d)*dx, ny + d*dy + i*(10+d)*dy, 10*dx, 10*dy, &next_player));
         }
         grid.push_back(temp);
     }
 }
-
 
 Amoeba_field::~Amoeba_field(){}
 
