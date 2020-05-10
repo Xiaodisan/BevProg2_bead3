@@ -1,13 +1,23 @@
 # depslib dependency file v1.0
-1589106624 source:d:\gabo\ppke-itk\bevprog_2\beadando3\main.cpp
+1589108648 source:d:\gabo\ppke-itk\bevprog_2\beadando3\main.cpp
 	<iostream>
+	"master.h"
 
 1589107356 source:d:\gabo\ppke-itk\bevprog_2\beadando3\src\widget.cpp
 	"Widget.h"
 
-1589107384 d:\gabo\ppke-itk\bevprog_2\beadando3\include\widget.h
+1589108493 d:\gabo\ppke-itk\bevprog_2\beadando3\include\widget.h
 	"graphics.hpp"
 
 1488260528 d:\gabo\ppke-itk\bevprog_2\beadando3\include\graphics.hpp
 	<string>
+
+1589108573 d:\gabo\ppke-itk\bevprog_2\beadando3\include\master.h
+	"Button.h"
+
+1589108697 source:d:\gabo\ppke-itk\bevprog_2\beadando3\src\button.cpp
+	"Button.h"
+
+1589108447 d:\gabo\ppke-itk\bevprog_2\beadando3\include\button.h
+	<Widget.h>
 

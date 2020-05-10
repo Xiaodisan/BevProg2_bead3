@@ -42,9 +42,11 @@
 			<Add library="lib/libSDLmain.a" />
 			<Add directory="lib" />
 		</Linker>
+		<Unit filename="include/Button.h" />
 		<Unit filename="include/Widget.h" />
 		<Unit filename="include/master.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Button.cpp" />
 		<Unit filename="src/Widget.cpp" />
 		<Extensions>
 			<code_completion />

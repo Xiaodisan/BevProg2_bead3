@@ -13,11 +13,11 @@ class Widget
         Widget(int,int,int,int);
         virtual ~Widget();
 
-        virtual void draw();
-        virtual void handle_event();
+        virtual void draw() = 0;
+        virtual void handle_event(event) = 0;
         virtual void update();
-        
-        virtual 
+
+        virtual bool is_selected(const int&, const int&);
         virtual void unfocus();
     protected:
         int left, top, width, height;

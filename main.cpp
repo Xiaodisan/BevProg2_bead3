@@ -1,10 +1,22 @@
 #include <iostream>
 #include "master.h"
 
-using namespace std;
+using namespace genv;
 
 int main()
 {
-
+    gout.open(XX,YY);
+    event ev;
+    gin.timer(40);
+    Button elso(10,10,30,40);
+    while(gin >> ev && ev.keycode != key_escape) {
+        if(ev.type == ev_timer) {
+            elso.draw();
+            gout << refresh;
+        }
+        else if(ev.type == ev_mouse) {
+            elso.handle_event(ev);
+        }
+    }
     return 0;
 }
