@@ -26,8 +26,7 @@ int menu() { ///bõvítésre, paraméterezésre lehetõség
     gout.open(XX,YY);
     event ev;
     gin.timer(40);
-//    gout << move_to(0,0) << color(108, 187, 164) << box(XX,YY) << color(255,255,255);
-    canvas background; background.open(XX,YY); {
+    canvas background; background.open(XX,YY); { ///háttér kialakítása - elhalasztva
         background << color(100,100,100);
         background << move_to(0,0) << box(XX,YY);
         background << color(200,200,200);
@@ -45,12 +44,30 @@ int menu() { ///bõvítésre, paraméterezésre lehetõség
             }
         }
     }
-    while(gin >> ev && ev.keycode != key_escape) {
+    std::vector<Widget*> widgetek; { ///menü widgetei
+//        Widget* kreator;
+//        kreator = new ...;
+//        widgetek.push_back(kreator);
+    }
+    Text_button* start_button = new Text_button(XX*11/16,YY*7/16,XX*2/8,YY*1/8,"START");
+    bool start_soon = false;
+    int count_down = 7;
+    while(gin >> ev && ev.keycode != key_escape && count_down > 0) {
         if(ev.type == ev_timer) {
             gout << stamp(background,0,0);
+            for(Widget* w : widgetek) if(w != nullptr) w->draw();
+            if(start_button != nullptr) start_button->draw();
             gout << refresh;
+            if(start_soon) count_down--;
         }
+        else if(ev.type == ev_mouse) {
+            for(Widget* w : widgetek) if(w != nullptr) w->handle_event(ev);
+            if(start_button != nullptr) start_button->handle_event(ev);
+        }
+         if(start_button != nullptr) if(start_button->is_pushed()) start_soon = true;
     }
+    for(Widget* w : widgetek) if(w != nullptr) delete w;
+    delete start_button;
     return game_loop(ev);
 }
 
