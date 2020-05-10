@@ -21,17 +21,19 @@ class Amoeba_field : public Widget
         class Square : public Button{
         public:
             Square()=delete;
-            Square(int,int,int,int);
+            Square(int,int,int,int,int*);
             virtual ~Square();
 
             void draw();
             void handle_event(const genv::event&);
         private:
             int occupied = 0; //-1: O, +1: X, 0: -
+            int* next;
         };
 
         std::vector<std::vector<Square*>> grid;
 
+        int next_player = 1;
         genv::canvas circle;
         genv::canvas cross;
         int R = 105, G = 137, B = 158;
