@@ -26,6 +26,7 @@ class Amoeba_field : public Widget
 
             void draw();
             void handle_event(const genv::event&);
+            int occupied_by();
         private:
             int occupied = 0; //-1: O, +1: X, 0: -
             int* next;
@@ -34,6 +35,8 @@ class Amoeba_field : public Widget
         std::vector<std::vector<Square*>> grid;
 
         int next_player = 1;
+        int number_of_moves = 0;
+        int latestX = -1, latestY = -1;
         genv::canvas circle;
         genv::canvas cross;
         int R = 105, G = 137, B = 158;
