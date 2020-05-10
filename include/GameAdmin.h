@@ -15,6 +15,8 @@ class GameAdmin
     protected:
 
     private:
+        int countInDirection(int,int);
+
         int goal;
         std::vector<std::vector<int*>>* table;
         int pX = -1, pY = -1;
