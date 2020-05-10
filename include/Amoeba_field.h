@@ -16,6 +16,7 @@ class Amoeba_field : public Widget
         void handle_event(const genv::event&);
         void update();
 
+        void references(std::vector<std::vector<int*>>*&,int*&,int*&);
     protected:
     private:
         class Square : public Button{

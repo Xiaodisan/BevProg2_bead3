@@ -62,6 +62,13 @@ void Amoeba_field::update() {
     }
 }
 
+void Amoeba_field::references(std::vector<std::vector<int*>>*& t, int*& nX, int*& nY) {
+    t = &table;
+    nX = &latestX;
+    nY = &latestY;
+    std::cout << std::endl << "References given" << std::endl;
+}
+
 Amoeba_field::Square::Square(int a, int b, int c, int d, int* n) :
     Button(a,b,c,d),
     next(n) {}
