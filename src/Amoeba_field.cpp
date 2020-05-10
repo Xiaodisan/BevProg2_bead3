@@ -6,7 +6,7 @@ using namespace genv;
 
 Amoeba_field::Amoeba_field(int nx, int ny, int sx, int sy, int ax, int ay, int d) :
     Widget(nx,ny,sx,sy) {
-    float dx = sx * 1.0 / (10*ax + d*ax + d); std::cout << sx << " " << ax << " " << dx;
+    float dx = sx * 1.0 / (10*ax + d*ax + d); //std::cout << sx << " " << ax << " " << dx;
     float dy = ay <= 0 ? sy * 1.0 / (10*ax + d*ax + d) : sy * 1.0 / (10*ay + d*ay + d);
     for(int i = 0; ay <= 0 ? i < ax : i < ay; i++) {
         std::vector<Square*> temp;
@@ -73,7 +73,7 @@ void Amoeba_field::references(std::vector<std::vector<int*>>*& t, int*& nX, int*
     t = &table;
     nX = &latestX;
     nY = &latestY;
-    std::cout << std::endl << "References given" << std::endl;
+//    std::cout << std::endl << "References given" << std::endl;
 }
 
 Amoeba_field::Square::Square(int a, int b, int c, int d, int* n) :

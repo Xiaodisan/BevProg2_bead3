@@ -18,7 +18,7 @@ int GameAdmin::evaluate() {
     int counter = 1;
     if(nX && nY) if((*nX) != pX || (*nY) != pY) {
         pX = *nX; pY = *nY;
-        std::cout << pX << ':' << pY << std::endl << (*(*table)[pY][pX]) << std::endl << std::endl;
+//        std::cout << pX << ':' << pY << std::endl << (*(*table)[pY][pX]) << std::endl << std::endl;
         steps++;
         counter = std::max(std::max(countInDirection(1,1),countInDirection(0,1)),std::max(countInDirection(1,-1),countInDirection(1,0)));
 //        std::cout << (*table)[pY][pX] << ':' << *(*table)[pY][pX] << "\n";
