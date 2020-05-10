@@ -20,7 +20,14 @@ Amoeba_field::Amoeba_field(int nx, int ny, int sx, int sy, int ax, int ay, int d
     }
 }
 
-Amoeba_field::~Amoeba_field(){}
+Amoeba_field::~Amoeba_field(){
+    ///a table-t nem kell törölni, mivel a Square mezöire mutatnak, ahol 'rendes' változók => a Square törlésével az is törlõdik
+    for(signed i = grid.size()-1; i >= 0; i--) {
+        for(signed j = grid[i].size()-1; j >= 0; j--) {
+            delete grid[i][j];
+        }
+    }
+}
 
 void Amoeba_field::draw() {
     gout << move_to(left,top) << color(R,G,B) << box(width,height);

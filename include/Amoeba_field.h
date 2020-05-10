@@ -39,8 +39,8 @@ class Amoeba_field : public Widget
         int next_player = 1;
         int number_of_moves = 0;
         int latestX = -1, latestY = -1;
-        genv::canvas circle;
-        genv::canvas cross;
+//        genv::canvas circle;
+//        genv::canvas cross;
         int R = 105, G = 137, B = 158;
 };
 
