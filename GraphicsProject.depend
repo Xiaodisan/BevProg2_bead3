@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1589106624 source:d:\gabo\ppke-itk\bevprog_2\beadando3\main.cpp
+	<iostream>
+
+1589107356 source:d:\gabo\ppke-itk\bevprog_2\beadando3\src\widget.cpp
+	"Widget.h"
+
+1589107384 d:\gabo\ppke-itk\bevprog_2\beadando3\include\widget.h
+	"graphics.hpp"
+
+1488260528 d:\gabo\ppke-itk\bevprog_2\beadando3\include\graphics.hpp
+	<string>
+
