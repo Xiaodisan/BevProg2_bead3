@@ -1,0 +1,8 @@
+#include "GameAdmin.h"
+
+GameAdmin::GameAdmin()
+{
+    //ctor
+}
+
+GameAdmin::~GameAdmin(){}

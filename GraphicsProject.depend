@@ -12,9 +12,10 @@
 1488260528 d:\gabo\ppke-itk\bevprog_2\beadando3\include\graphics.hpp
 	<string>
 
-1589116001 d:\gabo\ppke-itk\bevprog_2\beadando3\include\master.h
+1589136756 d:\gabo\ppke-itk\bevprog_2\beadando3\include\master.h
 	"Button.h"
 	"Amoeba_field.h"
+	"GameAdmin.h"
 
 1589108697 source:d:\gabo\ppke-itk\bevprog_2\beadando3\src\button.cpp
 	"Button.h"
@@ -26,8 +27,11 @@
 	"Amoeba_field.h"
 	<iostream>
 
-1589133482 d:\gabo\ppke-itk\bevprog_2\beadando3\include\amoeba_field.h
+1589137048 d:\gabo\ppke-itk\bevprog_2\beadando3\include\amoeba_field.h
 	<Widget.h>
 	<Button.h>
 	<vector>
+
+1589137064 d:\gabo\ppke-itk\bevprog_2\beadando3\include\gameadmin.h
+	<Amoeba_field.h>
 
