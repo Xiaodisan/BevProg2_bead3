@@ -36,11 +36,11 @@ int menu() { ///bõvítésre, paraméterezésre lehetõség
             for(int y = 0; y < YYY; y++) {
                 background << move_to(x,y) << color(100,100,100);
 ///             if(y > (x1-x0)/(y1-y0) * (x-x0) + y0) background << color(140,140,140);
-                if(y > XXX*x/(YYY*3) + YYY*2/15) background << color(140,140,140);
-                if(y > (XXX*3/10)/(0-YYY/2) * (x) + YYY/2) background << color(70,70,70);
-                if(y > (XXX*3/10)/(0-YYY/2) * (x) + YYY*4/5 && x > XXX/2) background << color(80,80,80);
-                if(y > (XXX*3/10)/(YYY*1/2) * (x-XXX/2) + YYY/2 && x > XXX/2) background << color(70,70,70);
-                if(y > (XXX*1/2)/(YYY*1/2) * (x-) + y0) background << color(70,70,70);
+//                if(y > XXX*x/(YYY*3) + YYY*2/15) background << color(140,140,140);
+//                if(y > (XXX*3/10)/(0-YYY/2) * (x) + YYY/2) background << color(70,70,70);
+//                if(y > (XXX*3/10)/(0-YYY/2) * (x) + YYY*4/5 && x > XXX/2) background << color(80,80,80);
+//                if(y > (XXX*3/10)/(YYY*1/2) * (x-XXX/2) + YYY/2 && x > XXX/2) background << color(70,70,70);
+//                if(y > (XXX*1/2)/(YYY*1/2) * (x) + YYY/2) background << color(170,170,170);
                 background << dot;
             }
         }
