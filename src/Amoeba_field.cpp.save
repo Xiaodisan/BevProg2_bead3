@@ -48,21 +48,21 @@ void Amoeba_field::handle_event(const event& e) {
 }
 
 void Amoeba_field::update() {
-    if(number_of_moves >= grid.size()*grid[0].size()) std::cout << "DRAW";
-    if(latestY > -1 && latestY < grid.size() && latestX > -1 && latestX < grid[0].size())
-    {
-        int counter = 0;
-        for(int cy = 0; cy <  grid.size(); cy++)
-        {
-            if(*grid[cy][latestX]->occupied_by() == *grid[latestY][latestX]->occupied_by()) counter++;
-            else counter = 0;
-            if(counter >= 5) break;
-        }
-        if(counter >= 5) std::cout << *grid[latestY][latestX]->occupied_by() << " WON";
-    }
+//    if(number_of_moves >= grid.size()*grid[0].size()) std::cout << "DRAW";
+//    if(latestY > -1 && latestY < grid.size() && latestX > -1 && latestX < grid[0].size())
+//    {
+//        int counter = 0;
+//        for(int cy = 0; cy <  grid.size(); cy++)
+//        {
+//            if(*grid[cy][latestX]->occupied_by() == *grid[latestY][latestX]->occupied_by()) counter++;
+//            else counter = 0;
+//            if(counter >= 5) break;
+//        }
+//        if(counter >= 5) std::cout << *grid[latestY][latestX]->occupied_by() << " WON";
+//    }
 }
 
-void Amoeba_field::references(std::vector<std::vector<int*>>* t, int& *nX, int& *nY) {
+void Amoeba_field::references(std::vector<std::vector<int*>>*& t, int*& nX, int*& nY) {
     t = &table;
     nX = &latestX;
     nY = &latestY;

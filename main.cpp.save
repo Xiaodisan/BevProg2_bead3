@@ -16,17 +16,20 @@ int game_loop() {
             jatek.update();
             jatek.draw();
             gout << refresh;
-            int result 
+            int result = game.evaluate();
+            if(result != 0) return result;
         }
         else if(ev.type == ev_mouse) {
             jatek.handle_event(ev);
         }
     }
+    return 0;
 }
 
 int main()
 {
     int result = game_loop();
-    std::cout << result;
+    std::
+    if(result == 1) std::cout << "WHITE WON";
     return 0;
 }

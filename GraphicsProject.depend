@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1589139385 source:d:\gabo\ppke-itk\bevprog_2\beadando3\main.cpp
+1589142253 source:d:\gabo\ppke-itk\bevprog_2\beadando3\main.cpp
 	<iostream>
 	"master.h"
 
@@ -23,7 +23,7 @@
 1589117274 d:\gabo\ppke-itk\bevprog_2\beadando3\include\button.h
 	<Widget.h>
 
-1589139963 source:d:\gabo\ppke-itk\bevprog_2\beadando3\src\amoeba_field.cpp
+1589142077 source:d:\gabo\ppke-itk\bevprog_2\beadando3\src\amoeba_field.cpp
 	"Amoeba_field.h"
 	<iostream>
 
@@ -35,7 +35,7 @@
 1589139699 d:\gabo\ppke-itk\bevprog_2\beadando3\include\gameadmin.h
 	<Amoeba_field.h>
 
-1589139884 source:d:\gabo\ppke-itk\bevprog_2\beadando3\src\gameadmin.cpp
+1589142277 source:d:\gabo\ppke-itk\bevprog_2\beadando3\src\gameadmin.cpp
 	<iostream>
 	"GameAdmin.h"
 
