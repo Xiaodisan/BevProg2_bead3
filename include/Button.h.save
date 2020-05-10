@@ -7,7 +7,7 @@
 class Button : public Widget
 {
     public:
-        Button() = 0;
+        Button() = delete;
         Button(int, int, int, int);
         virtual ~Button();
 

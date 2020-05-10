@@ -16,20 +16,24 @@ class Amoeba_field : public Widget
         void handle_event(const genv::event&);
         void update();
 
-
     protected:
     private:
         class Square : public Button{
-        private:
-
         public:
+            Square()=delete;
+            Square(int,int,int,int);
+            virtual ~Square();
 
+            void draw();
+            void handle_event(const genv::event&);
+        private:
+            int occupied = 0; //-1: O, +1: X, 0: -
         };
 
         std::vector<std::vector<Square>> grid;
-        bool pushed;
         genv::canvas circle;
         genv::canvas cross;
+        int R = 105, G = 137, B = 158;
 };
 
 #endif // AMOEBA_FIELD_H
