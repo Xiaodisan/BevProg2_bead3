@@ -5,6 +5,10 @@ GameAdmin::GameAdmin(int g) :
 
 GameAdmin::~GameAdmin(){}
 
-int GameAdmin::evaluate(std::vector<std::vector<int*>>*) {
+void GameAdmin::start_new(std::vector<std::vector<int*>>* t) {
+    table = t;
+}
+
+int GameAdmin::evaluate() {
     return 0;
 }

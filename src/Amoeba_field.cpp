@@ -10,10 +10,13 @@ Amoeba_field::Amoeba_field(int nx, int ny, int sx, int sy, int ax, int ay, int d
     float dy = ay <= 0 ? sy * 1.0 / (10*ax + d*ax + d) : sy * 1.0 / (10*ay + d*ay + d);
     for(int i = 0; ay <= 0 ? i < ax : i < ay; i++) {
         std::vector<Square*> temp;
+        std::vector<int*> tempTable;
         for(int j = 0; j < ax; j++) {
             temp.push_back(new Square(nx + d*dx + j*(10+d)*dx, ny + d*dy + i*(10+d)*dy, 10*dx, 10*dy, &next_player));
+            tempTable.push_back(temp[temp.size()-1]->occupied_by());
         }
         grid.push_back(temp);
+        table.push_back(tempTable);
     }
 }
 
@@ -51,11 +54,11 @@ void Amoeba_field::update() {
         int counter = 0;
         for(int cy = 0; cy <  grid.size(); cy++)
         {
-            if(grid[cy][latestX]->occupied_by() == grid[latestY][latestX]->occupied_by()) counter++;
+            if(*grid[cy][latestX]->occupied_by() == *grid[latestY][latestX]->occupied_by()) counter++;
             else counter = 0;
             if(counter >= 5) break;
         }
-        if(counter >= 5) std::cout << grid[latestY][latestX]->occupied_by() << " WON";
+        if(counter >= 5) std::cout << *grid[latestY][latestX]->occupied_by() << " WON";
     }
 }
 
@@ -81,4 +84,4 @@ void Amoeba_field::Square::handle_event(const event& e) {
         }
 }
 
-int Amoeba_field::Square::occupied_by() {return occupied;}
+int* Amoeba_field::Square::occupied_by() {return &occupied;}

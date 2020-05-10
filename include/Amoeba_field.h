@@ -26,13 +26,14 @@ class Amoeba_field : public Widget
 
             void draw();
             void handle_event(const genv::event&);
-            int occupied_by();
+            int* occupied_by();
         private:
             int occupied = 0; //-1: O, +1: X, 0: -
             int* next;
         };
 
         std::vector<std::vector<Square*>> grid;
+        std::vector<std::vector<int*>> table;
 
         int next_player = 1;
         int number_of_moves = 0;
