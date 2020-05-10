@@ -30,7 +30,8 @@ class Amoeba_field : public Widget
             int occupied = 0; //-1: O, +1: X, 0: -
         };
 
-        std::vector<std::vector<Square>> grid;
+        std::vector<std::vector<Square*>> grid;
+
         genv::canvas circle;
         genv::canvas cross;
         int R = 105, G = 137, B = 158;

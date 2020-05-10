@@ -22,10 +22,11 @@
 1589117274 d:\gabo\ppke-itk\bevprog_2\beadando3\include\button.h
 	<Widget.h>
 
-1589130757 source:d:\gabo\ppke-itk\bevprog_2\beadando3\src\amoeba_field.cpp
+1589132408 source:d:\gabo\ppke-itk\bevprog_2\beadando3\src\amoeba_field.cpp
 	"Amoeba_field.h"
+	<iostream>
 
-1589130817 d:\gabo\ppke-itk\bevprog_2\beadando3\include\amoeba_field.h
+1589132390 d:\gabo\ppke-itk\bevprog_2\beadando3\include\amoeba_field.h
 	<Widget.h>
 	<Button.h>
 	<vector>
