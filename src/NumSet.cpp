@@ -7,7 +7,10 @@ NumSet::NumSet(int x, int y, int w, int h, int* nS, std::string nl, int ll, int 
     setNum(nS),
     label(nl),
     lowLimit(ll),
-    highLimit(hl) {
+    highLimit(hl) { ///lowLimit + (highLimit-lowLimit)*(left - minx)/(maxx-minx-width)
+        ///(*nS) = ll + (hl-ll)*(left - x-h*2/9)/(-h*11/9)
+        ///left = ((*nS)-ll)*(-h*11/9)/(hl-ll) +x+h*2/9
+//        setter = new Drag(x+h*2/9+((*nS)-ll)*(-h*11/9)/(hl-ll) +x+h*2/9,y+h*5/9,h/3,h/3,x+h*2/9,y+h*5/9,x+w-h,y+h*8/9);
         setter = new Drag(x+h*2/9,y+h*5/9,h/3,h/3,x+h*2/9,y+h*5/9,x+w-h,y+h*8/9);
     }
 
