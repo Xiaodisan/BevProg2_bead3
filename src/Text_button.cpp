@@ -3,7 +3,7 @@
 using namespace genv;
 
 Text_button::Text_button(int a, int b, int c, int d, std::string t) :
-    Button{a,b,c,d},
+    Widget{a,b,c,d},
     label(t) {
         printed_text.open(c,d); printed_text.transparent(true);
         printed_text.load_font("LiberationSans-Regular.ttf",d/2,false);
@@ -24,4 +24,8 @@ void Text_button::handle_event(const event& e) {
        e.button == btn_left) pushed = !pushed;
 }
 
-bool Text_button::is_pushed() {return pushed;}
+bool Text_button::is_selected(const int& mx, const int& my) {
+    return pushed;
+}
+
+void Text_button::unfocus(){focused = false; pushed = false;}

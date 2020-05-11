@@ -1,10 +1,10 @@
 #ifndef TEXT_BUTTON_H
 #define TEXT_BUTTON_H
 
-#include <Button.h>
+#include <Widget.h>
 
 
-class Text_button : public Button
+class Text_button : public Widget
 {
     public:
         Text_button() = delete;
@@ -13,7 +13,8 @@ class Text_button : public Button
 
         void draw();
         void handle_event(const genv::event&);
-        bool* st
+        bool is_selected(const int&,const int&);
+        void unfocus();
     protected:
     private:
         bool pushed = false;
