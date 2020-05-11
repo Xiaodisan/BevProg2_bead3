@@ -7,7 +7,7 @@ Text_button::Text_button(int a, int b, int c, int d, std::string t) :
     label(t) {
         printed_text.open(c,d); printed_text.transparent(true);
         printed_text.load_font("LiberationSans-Regular.ttf",d/2,false);
-        printed_text << move_to(c/2 - printed_text.twidth(label)/2,d/2 - printed_text.cascent()/2 - printed_text.cdescent()/2) << genv::text(label);
+        printed_text << move_to(c/2 - printed_text.twidth(label)/2,d/2 - printed_text.cascent()/2 - printed_text.cdescent()/2) << color(180,205,225) << text(label);
 }
 
 Text_button::~Text_button(){}

@@ -7,26 +7,30 @@ using namespace genv;
 int game_loop(event& ev, int tableX = 15, int goal = 5, int tableY = 15) {
     Amoeba_field jatek(10,10,XX-20,YY-20,tableX,tableY);
     GameAdmin game(goal,&jatek);
-    while(gin >> ev && ev.keycode != key_escape) {
+    while(gin >> ev && ev.keycode != key_escape && ev.keycode != key_backspace) {
         if(ev.type == ev_timer) {
             jatek.update();
             jatek.draw();
             gout << refresh;
             int result = game.evaluate();
-            if(result != 0) return result;
+            if(result != 0) {
+                for(int i = 20; gin >> ev && ev.type != ev_key && ev.button <= 0 && i > 0;) {if(ev.type == ev_timer) i--;}
+                return result;
+            }
         }
         else if(ev.type == ev_mouse) {
             jatek.handle_event(ev);
         }
     }
-    return -10;
+    if(ev.keycode == key_escape) return -10;
+    return 0;
 }
 
 void background_refresh(canvas& background,std::string mainTitle,std::string subTitle) {
 /// if(y > (x1-x0)/(y1-y0) * (x-x0) + y0) background << color(140,140,140);
     background.load_font("LiberationSans-Regular.ttf",YY*3/30);
     background << move_to(0,0) << color(40,90,110) << box(XX,YY);
-    background << move_to(XX/2 - background.twidth(mainTitle)/2,YY*1/30) << color(255,255,255) << text(mainTitle);
+    background << move_to(XX/2 - background.twidth(mainTitle)/2,YY*1/30) << color(180,205,225) << text(mainTitle);
     background << move_to(0,YY*1/30+background.cascent()+background.cdescent());
     background.load_font("LiberationSans-Regular.ttf",YY*1/30);
     background << move(XX/2 - background.twidth(subTitle)/2,0) << text(subTitle);
@@ -104,10 +108,6 @@ int menu_loop() {
 int main()
 {
     setlocale(LC_ALL,"HUN");
-    int result = menu_loop();
-    std::cout << std::endl;
-    if(result == 1) std::cout << "WHITE WON";
-    else if(result == -1) std::cout << "BLACK WON";
-    else if(result == 629) std::cout << "DRAW";
+    int manuReturn = menu_loop();
     return 0;
 }

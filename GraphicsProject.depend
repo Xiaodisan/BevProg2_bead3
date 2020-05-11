@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1589174022 source:d:\gabo\ppke-itk\bevprog_2\beadando3\main.cpp
+1589174864 source:d:\gabo\ppke-itk\bevprog_2\beadando3\main.cpp
 	<iostream>
 	"master.h"
 
@@ -41,7 +41,7 @@
 	<iostream>
 	"GameAdmin.h"
 
-1589172128 source:d:\gabo\ppke-itk\bevprog_2\beadando3\src\text_button.cpp
+1589174486 source:d:\gabo\ppke-itk\bevprog_2\beadando3\src\text_button.cpp
 	"Text_button.h"
 
 1589172007 d:\gabo\ppke-itk\bevprog_2\beadando3\include\text_button.h
