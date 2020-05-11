@@ -44,14 +44,18 @@
 		</Linker>
 		<Unit filename="include/Amoeba_field.h" />
 		<Unit filename="include/Button.h" />
+		<Unit filename="include/Drag.h" />
 		<Unit filename="include/GameAdmin.h" />
+		<Unit filename="include/NumSet.h" />
 		<Unit filename="include/Text_button.h" />
 		<Unit filename="include/Widget.h" />
 		<Unit filename="include/master.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Amoeba_field.cpp" />
 		<Unit filename="src/Button.cpp" />
+		<Unit filename="src/Drag.cpp" />
 		<Unit filename="src/GameAdmin.cpp" />
+		<Unit filename="src/NumSet.cpp" />
 		<Unit filename="src/Text_button.cpp" />
 		<Unit filename="src/Widget.cpp" />
 		<Extensions>

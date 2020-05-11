@@ -19,7 +19,7 @@ int game_loop(event& ev, int tableX = 15, int goal = 5, int tableY = 15) {
             jatek.handle_event(ev);
         }
     }
-    return 0;
+    return -10;
 }
 
 void background_refresh(canvas& background,std::string mainTitle,std::string subTitle) {
@@ -63,7 +63,7 @@ int menu_loop() {
 
     int countDown = 8;
 
-    while(gin >> ev && ev.keycode != key_escape) {
+    while(ev.keycode != key_escape && gin >> ev) {
         if(ev.type == ev_timer) { ///widgetek kirajzolása, játék indítás (+késleltetés)
             gout << stamp(background,0,0);
             for(signed i = widgetek.size()-1; i >= 0; i--) if(widgetek[i] != nullptr) {
@@ -75,6 +75,7 @@ int menu_loop() {
                 if(winner == 1) subTitle = plusz + " won";
                 else if(winner == -1) subTitle = minusz + " won";
                 else subTitle = " ";
+                if(winner == -10) ev.keycode = key_escape;
                 background_refresh(background,mainTitle,subTitle);
                 for(Widget* w : widgetek) if(w != nullptr) w->unfocus();
                 countDown = 8;
@@ -91,8 +92,6 @@ int menu_loop() {
                     break;
                 }
             }
-        }
-        else {
         }
     }
     for(signed i = widgetek.size()-1; i > 0; i--) if(widgetek[i] != nullptr)
