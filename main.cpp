@@ -22,6 +22,26 @@ int game_loop(event& ev, int tableX = 15, int goal = 5, int tableY = 15) {
     return 0;
 }
 
+int menu_loop(std::string previousWinner = "") {
+    gout.open(XX,YY);
+    event ev;
+    gin.timer(40);
+    canvas background; {
+        background.open(XX,YY);
+        background.load_font("LiberationSans-Regular.ttf",YY*3/30,false);
+    }
+    std::string plusz = "White"; ///a 'fehér' játékos (1-es visszatérési érték game_loop-ból, ha ö nyer)
+    std::string minusz = "Black"; ///a 'fekete' játékos (-1-es visszatérési érték game_loop-ból, ha ö nyer)
+    int countDown = 8;
+    while(gin >> ev && ev.keycode != key_escape) {
+        if(ev.type == ev_timer) {
+        } else if(ev.type == ev_mouse) {
+        } else {
+        }
+    }
+    return game_loop(ev);
+}
+
 int menu() { ///bõvítésre, paraméterezésre lehetõség
     gout.open(XX,YY);
     event ev;
@@ -58,13 +78,16 @@ int menu() { ///bõvítésre, paraméterezésre lehetõség
             for(Widget* w : widgetek) if(w != nullptr) w->draw();
             if(start_button != nullptr) start_button->draw();
             gout << refresh;
+
             if(start_soon) count_down--;
         }
         else if(ev.type == ev_mouse) {
             for(Widget* w : widgetek) if(w != nullptr) w->handle_event(ev);
-            if(start_button != nullptr) start_button->handle_event(ev);
+            if(start_button != nullptr) {
+                start_button->handle_event(ev);
+                if(start_button->is_pushed()) start_soon = true;
+            }
         }
-         if(start_button != nullptr) if(start_button->is_pushed()) start_soon = true;
     }
     for(Widget* w : widgetek) if(w != nullptr) delete w;
     delete start_button;
