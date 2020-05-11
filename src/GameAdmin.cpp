@@ -34,12 +34,12 @@ int GameAdmin::evaluate() {
 int GameAdmin::countInDirection(int kx, int ky) { ///irányvektorokkal megadva az irányt
     int counter = 1;
     int playerID = *((*table)[pY][pX]);
-    for(int i = 1; i < goal && pX+i*kx < (*table).size() && pY+i*ky < (*table)[pY].size() && pX+i*kx >= 0 && pY+i*ky >= 0;i++) {
+    for(int i = 1; i < goal && pX+i*kx < (*table)[pY].size() && pY+i*ky < (*table).size() && pX+i*kx >= 0 && pY+i*ky >= 0;i++) {
         int newID = *(*table)[pY+i*ky][pX+i*kx];
         if(newID != playerID) break;
         counter++;
     }
-    for(int i = 1; i < goal && pX-i*kx >= 0 && pY-i*ky >= 0 && pX-i*kx < (*table).size() && pY-i*ky  < (*table)[pY].size() ; i++) {
+    for(int i = 1; i < goal && pX-i*kx >= 0 && pY-i*ky >= 0 && pX-i*kx < (*table)[pY].size() && pY-i*ky  < (*table).size() ; i++) {
         int newID = *(*table)[pY-i*ky][pX-i*kx];
         if(newID != playerID) break;
         counter++;

@@ -1,21 +1,23 @@
 # depslib dependency file v1.0
-1589146738 source:d:\gabo\ppke-itk\bevprog_2\beadando3\main.cpp
+1589174864 source:d:\gabo\ppke-itk\bevprog_2\beadando3\main.cpp
 	<iostream>
 	"master.h"
 
 1589107356 source:d:\gabo\ppke-itk\bevprog_2\beadando3\src\widget.cpp
 	"Widget.h"
 
-1589136134 d:\gabo\ppke-itk\bevprog_2\beadando3\include\widget.h
+1589160306 d:\gabo\ppke-itk\bevprog_2\beadando3\include\widget.h
 	"graphics.hpp"
 
 1488260528 d:\gabo\ppke-itk\bevprog_2\beadando3\include\graphics.hpp
 	<string>
 
-1589136756 d:\gabo\ppke-itk\bevprog_2\beadando3\include\master.h
+1589168416 d:\gabo\ppke-itk\bevprog_2\beadando3\include\master.h
 	"Button.h"
+	"Text_button.h"
 	"Amoeba_field.h"
 	"GameAdmin.h"
+	"NumSet.h"
 
 1589108697 source:d:\gabo\ppke-itk\bevprog_2\beadando3\src\button.cpp
 	"Button.h"
@@ -35,7 +37,26 @@
 1589144669 d:\gabo\ppke-itk\bevprog_2\beadando3\include\gameadmin.h
 	<Amoeba_field.h>
 
-1589146757 source:d:\gabo\ppke-itk\bevprog_2\beadando3\src\gameadmin.cpp
+1589173599 source:d:\gabo\ppke-itk\bevprog_2\beadando3\src\gameadmin.cpp
 	<iostream>
 	"GameAdmin.h"
+
+1589174486 source:d:\gabo\ppke-itk\bevprog_2\beadando3\src\text_button.cpp
+	"Text_button.h"
+
+1589172007 d:\gabo\ppke-itk\bevprog_2\beadando3\include\text_button.h
+	<Widget.h>
+
+1589172229 source:d:\gabo\ppke-itk\bevprog_2\beadando3\src\drag.cpp
+	"Drag.h"
+
+1589169715 d:\gabo\ppke-itk\bevprog_2\beadando3\include\drag.h
+	<Widget.h>
+
+1589173661 source:d:\gabo\ppke-itk\bevprog_2\beadando3\src\numset.cpp
+	"NumSet.h"
+
+1589171057 d:\gabo\ppke-itk\bevprog_2\beadando3\include\numset.h
+	<Widget.h>
+	<Drag.h>
 

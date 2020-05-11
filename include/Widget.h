@@ -2,7 +2,7 @@
 #define WIDGET_H
 
 #define XX 600
-#define YY 600
+#define YY XX
 
 #include "graphics.hpp"
 
