@@ -49,6 +49,8 @@ int menu_loop() {
         Widget* kreator;
         kreator = new Text_button(XX*11/16,YY*7/16,XX*2/8,YY*1/8,"START");
         widgetek.push_back(kreator);
+        kreator = new NumSet(20,100,300,40,3,30);
+        widgetek.push_back(kreator);
     }
 
     std::string plusz = "White"; ///a 'fehér' játékos (1-es visszatérési érték game_loop-ból, ha ö nyer)
