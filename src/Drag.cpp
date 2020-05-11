@@ -36,3 +36,8 @@ void Drag::drag(const int& evx, const int& evy){
 bool Drag::is_selected(const int& x, const int& y) {
     return dragging;
 }
+
+int Drag::percent() {
+    float prcnt = (left - minx)*100/(maxx-minx-width);
+    return prcnt;
+}

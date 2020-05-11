@@ -45,17 +45,17 @@ int menu_loop() {
     background.open(XX,YY);
     background_refresh(background,mainTitle,subTitle);
 
+    std::string plusz = "White"; ///a 'fehér' játékos (1-es visszatérési érték game_loop-ból, ha ö nyer)
+    std::string minusz = "Black"; ///a 'fekete' játékos (-1-es visszatérési érték game_loop-ból, ha ö nyer)
+    int tableX = 15, goal = 5, tableY = 15;
+
     std::vector<Widget*> widgetek; {
         Widget* kreator;
         kreator = new Text_button(XX*11/16,YY*7/16,XX*2/8,YY*1/8,"START");
         widgetek.push_back(kreator);
-        kreator = new NumSet(20,100,300,40,3,30);
+        kreator = new NumSet(20,100,300,40,&tableX,"Number of columns",3,30);
         widgetek.push_back(kreator);
     }
-
-    std::string plusz = "White"; ///a 'fehér' játékos (1-es visszatérési érték game_loop-ból, ha ö nyer)
-    std::string minusz = "Black"; ///a 'fekete' játékos (-1-es visszatérési érték game_loop-ból, ha ö nyer)
-    int tableX = 15, goal = 5, tableY = 15;
 
     int countDown = 8;
 

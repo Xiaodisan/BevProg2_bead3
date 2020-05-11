@@ -14,6 +14,7 @@ class Drag : public Widget
         void handle_event(const genv::event&);
         void drag(const int&, const int&);
         bool is_selected(const int&, const int&);
+        int percent();
     protected:
         bool dragging = false;
         int mx, my;

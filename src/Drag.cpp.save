@@ -17,7 +17,11 @@ void Drag::draw() {
 
 void Drag::handle_event(const event& e) {
     if(e.type == ev_mouse) if(e.button == btn_left) {
-        if(e.pos_x > left && e.pos_y > top && e.pos_x < left+width && e.pos_y < top+height)
+        if(e.pos_x > left && e.pos_y > top && e.pos_x < left+width && e.pos_y < top+height) {
+            mx = e.pos_x-left;
+            my = e.pos_y-top;
+            dragging = true;
+        }
     }
     else if(e.button == -btn_left) dragging = false;
 }
@@ -30,10 +34,10 @@ void Drag::drag(const int& evx, const int& evy){
 }
 
 bool Drag::is_selected(const int& x, const int& y) {
-    if(x > left && x < left + width && y > top && y < top + height) {
-        focused = true;
-        return true;
-    }
-    dragging = false;
-    return false;
+    return dragging;
+}
+
+int Drag::percent() {
+    int prcnt = (maxx-minx)/(left+width/2 - minx);
+    return prcnt;
 }
