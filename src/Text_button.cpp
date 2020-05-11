@@ -13,7 +13,7 @@ Text_button::Text_button(int a, int b, int c, int d, std::string t) :
 Text_button::~Text_button(){}
 
 void Text_button::draw(){
-    gout << move_to(left,top) << color(pushed*R,G,B) << box(width,height);
+    gout << move_to(left,top) << (pushed ? color(255-R,255-G,255-B) : color(R,G,B)) << box(width,height);
     gout << stamp(printed_text,left,top);
 }
 

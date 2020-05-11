@@ -12,7 +12,7 @@ Drag::Drag(int x, int y, int w, int h, int nx, int ny, int xx, int xy) :
 Drag::~Drag(){}
 
 void Drag::draw() {
-    gout << move_to(left,top) << color(10,60,80) << box(width,height);
+    gout << move_to(left,top) << (dragging ? color(255-10,255-60,255-80) : color(10,60,80)) << box(width,height);
 }
 
 void Drag::handle_event(const event& e) {

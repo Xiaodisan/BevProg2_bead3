@@ -53,7 +53,11 @@ int menu_loop() {
         Widget* kreator;
         kreator = new Text_button(XX*11/16,YY*7/16,XX*2/8,YY*1/8,"START");
         widgetek.push_back(kreator);
-        kreator = new NumSet(20,100,300,40,&tableX,"Number of columns",3,30);
+        kreator = new NumSet(XX*2/30,YY*9/24,XX/2,YY/15,&tableX,"Number of columns",3,30);
+        widgetek.push_back(kreator);
+        kreator = new NumSet(XX*2/30,YY*13/24,XX/2,YY/15,&tableY,"Number of rows",3,30);
+        widgetek.push_back(kreator);
+        kreator = new NumSet(XX*2/30,YY*17/24,XX/2,YY/15,&goal,"Target size of a winning set",3,10);
         widgetek.push_back(kreator);
     }
 

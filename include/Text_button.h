@@ -18,7 +18,7 @@ class Text_button : public Widget
     protected:
     private:
         bool pushed = false;
-        int R = 200, G = 230, B = 250;
+        int R = 60, G = 110, B = 130;
         std::string label = "";
         genv::canvas printed_text;
 };
